@@ -1,0 +1,24 @@
+.entry-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entry-page .container {
+    width: auto;               /* Let the container width adjust based on content */
+    max-width: 600px;          /* Optional: limit maximum width */
+    padding: 30px;             /* Optional: space inside the container */
+    display: flex;             /* Flexbox layout inside the container */
+    flex-direction: column;    /* Ensure elements inside the container are stacked vertically */
+    align-items: center;  
+    background-color: white;    /* Optional: center content horizontally inside the container */
+    
+  }
+  .box-form{
+    box-shadow: 0px 0px 15px -3px;
+
+  }
+
+  
+ 
+  
