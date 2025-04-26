@@ -5,7 +5,16 @@ import logo from '../../assets/img/logo.png'
 export const Header= () => {
   return (
     <Navbar collapseOnSelect bg='info' variant='dark' expand='md'>
-    <Navbar.Brand><img src={logo} alt='logo' width='95px'></img></Navbar.Brand>
+    <Navbar.Brand>
+  <img
+    src={logo}
+    alt="logo"
+    width="95"
+    height="95"
+    style={{ borderRadius: '50%', objectFit: 'cover' }}
+  />
+</Navbar.Brand>
+
     <Navbar.Toggle aria-controls='basic-navbar-bar'/>
     <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="m-lg-auto">
