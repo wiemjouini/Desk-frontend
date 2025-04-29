@@ -2,6 +2,7 @@ import React from 'react'
 import { Table , } from 'react-bootstrap'
 
 export const TicketTable = ({Tickets}) => {
+  
   return (
     <Table striped bordered hover>
       <thead>
@@ -15,7 +16,7 @@ export const TicketTable = ({Tickets}) => {
       <tbody>
       {Tickets.length ? Tickets.map((row) =>(<tr key={row.id}>
           <td>{row.id}</td>
-          <td>{row.subjects}</td>
+          <td>{row.subject}</td>
           <td>{row.status}</td>
           <td>{row.addedAt}</td>
         </tr>
