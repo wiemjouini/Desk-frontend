@@ -37,11 +37,11 @@ export const LoginForm= ({handleOnChange ,FormSwitcher, handleOnSubmit , email ,
                 <hr/>
             </Col>
         </Row>
-        <row>
+        <Row>
             <Col>
                 <a href='#!' onClick={()=>FormSwitcher('reset')}>forget password ? </a>
             </Col>
-        </row>
+        </Row>
     </Container>
   )
 }
