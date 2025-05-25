@@ -5,7 +5,9 @@ const initialState = {
     tickets: [],
     isLoading: false,
     error: '',
-    searchTicketList :[]
+    searchTicketList :[],
+    selectedTicket :{},
+    replyMsg :'',
 };
 
 const ticketListsSlice = createSlice({
@@ -32,11 +34,68 @@ const ticketListsSlice = createSlice({
                 return row.subject.toLowerCase().includes(payload.toLowerCase());
 
             })
-        }
+        },
+
+        fetchSingleTicketLoading: (state) => {
+            state.isLoading = true;
+           
+        },
+        fetchSingleTicketSuccess: (state, {payload}) => {
+            state.selectedTicket= payload;
+            state.isLoading = false;
+            
+        },
+        fetchSingleTicketFail: (state, {payload}) => {
+            state.isLoading = false;
+            state.error = payload;
+        },
+         replyTicketLoading: (state) => {
+            state.isLoading = true;
+           
+        },
+        replyTicketSuccess: (state, {payload}) => {
+            state.selectedTicket= payload;
+            state.isLoading = false;
+            state.replyMsg = payload
+            
+        },
+        replyTicketFail: (state, {payload}) => {
+            state.isLoading = false;
+            state.error = payload;
+        },
+         closeTicketLoading: (state) => {
+            state.isLoading = true;
+           
+        },
+        closeTicketSuccess: (state, {payload}) => {
+            state.selectedTicket= payload;
+            state.isLoading = false;
+            state.replyMsg = payload
+            
+        },
+        closeTicketFail: (state, {payload}) => {
+            state.isLoading = false;
+            state.error = payload;
+        },
+
     },
 });
 
 const {reducer , actions}=ticketListsSlice;
-export const {fetchTicketLoading,fetchTicketSuccess,fetchTicketFail,searchTickets}=actions
+export const {fetchTicketLoading,
+    fetchTicketSuccess,
+    fetchTicketFail,
+    fetchSingleTicketLoading,
+    fetchSingleTicketSuccess,
+    fetchSingleTicketFail,
+    replyTicketLoading,
+    replyTicketSuccess,
+    replyTicketFail,
+    closeTicketLoading,
+    closeTicketSuccess,
+    closeTicketFail,
+    searchTickets,
+    replyMsg}
+    =actions
 export default reducer ; 
 

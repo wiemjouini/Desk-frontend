@@ -1,0 +1,22 @@
+
+
+.login-bg {
+  background-image: url('../../assets/img/images.jpg'); /* Change path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* ✅ Fill the entire viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+}
+/*background-color: rgba(255, 255, 255, 0.9); /* optional: make form readable over image */
+
