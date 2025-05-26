@@ -5,6 +5,7 @@ const initialState = {
     tickets: [],
     isLoading: false,
     error: '',
+    replyTicketError : "",
     searchTicketList :[],
     selectedTicket :{},
     replyMsg :'',
@@ -26,7 +27,7 @@ const ticketListsSlice = createSlice({
         },
         fetchTicketFail: (state, {payload}) => {
             state.isLoading = false;
-            state.error = payload;
+            state.replyTicketError = payload;
         },
         searchTickets:(state,{payload})=>{
             state.searchTicketList=state.tickets.filter((row)=>{

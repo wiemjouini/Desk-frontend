@@ -12,10 +12,10 @@ import { closeTicket, fetchSingleTicket } from '../ticket-listing/ticketAction';
 
 //const ticket=tickets[0]
 export const Ticket = () => {
-    const { replyMsg } = useSelector((state) => state.tickets);
+    //const { replyMsg } = useSelector((state) => state.tickets);
     const {tId}=useParams()
     const dispatch = useDispatch();
-    const { isLoading, error, selectedTicket } = useSelector(state => state.tickets);
+    const { isLoading, error, selectedTicket,replyMsg,replyTicketError } = useSelector(state => state.tickets);
 
 
     useEffect(()=>{
@@ -33,15 +33,13 @@ export const Ticket = () => {
             <Col>
                 {isLoading && <Spinner variant ='primary' animation="border"/>}
                 {error && <Alert variant ='danger'>{error}</Alert>}
+                {replyTicketError && <Alert variant ='danger'>{replyTicketError}</Alert>}
                 {replyMsg && <Alert variant='success'>{replyMsg}</Alert>}
             </Col>
         </Row>
         <Row>
             <Col className='text-font-weight-bolder text-secondary'>
-            {/*
-                <div className='subject'>Subject : {selectedTicket.subject}</div>
-                <div className='date'>Ticket Opened : {selectedTicket.openAt}</div>
-                <div className='status'>Status : {selectedTicket.status}</div>*/}
+           
 
 
                      {selectedTicket?.subject && (

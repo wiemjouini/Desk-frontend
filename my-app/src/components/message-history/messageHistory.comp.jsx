@@ -27,5 +27,11 @@ export const MessageHistory = ({msg}) => {
   
 }
 MessageHistory.propTypes = {
-    msg : PropTypes.object.isRequired,
+  msg: PropTypes.arrayOf(
+    PropTypes.shape({
+      sender: PropTypes.string,
+      msgAt: PropTypes.string,
+      message: PropTypes.string
+    })
+  ).isRequired,
 }
