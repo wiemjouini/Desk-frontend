@@ -5,6 +5,24 @@ const UserProfileUrl = rootUrl + 'user';
 const logoutUrl =rootUrl + 'user/logout';
 const newAccessJWT = rootUrl + "tokens"
 
+export const userRegistration = async (frmData) => {
+  try {
+    const res = await axios.post(UserProfileUrl, frmData);
+
+    if (res.data.status === 'success') {
+      sessionStorage.setItem('accessJWT', res.data.accessJWT);
+      localStorage.setItem(
+        'sotetelDeskSite',
+        JSON.stringify({ refreshJWT: res.data.refreshJWT })
+      );
+    }
+
+    return res.data;
+  } catch (error) {
+    console.log(error.message);
+    throw error;
+  }
+};
 export const userLogin = async (frmData) => {
   try {
     const res = await axios.post(loginUrl, frmData);

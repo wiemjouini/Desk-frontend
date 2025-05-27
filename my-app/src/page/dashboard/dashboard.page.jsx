@@ -56,7 +56,7 @@ export const Dashboard = () => {
 
       <Row>
         <Col className="recent-ticket">
-          <TicketTable tickets={tickets} />
+          <TicketTable tickets={tickets}  />
         </Col>
       </Row>
     </Container>
