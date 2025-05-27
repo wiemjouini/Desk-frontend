@@ -7,6 +7,7 @@ import { MessageHistory } from '../../components/message-history/messageHistory.
 import { UpdateTicket } from '../../components/update-ticket/UpdateTicket.comp';
 import { useParams } from 'react-router-dom';
 import { closeTicket, fetchSingleTicket } from '../ticket-listing/ticketAction';
+import {resetResponseMsg} from '../ticket-listing/ticketSlice'
 
 
 
@@ -17,10 +18,18 @@ export const Ticket = () => {
     const dispatch = useDispatch();
     const { isLoading, error, selectedTicket,replyMsg,replyTicketError } = useSelector(state => state.tickets);
 
+useEffect(() => {
+  // Quand tId change, on récupère le ticket
+  dispatch(fetchSingleTicket(tId));
 
-    useEffect(()=>{
-     dispatch(fetchSingleTicket(tId))
-    },[tId,dispatch])
+  // Cleanup function : reset les messages quand on quitte ou démonte
+  return () => {
+    if (replyMsg || replyTicketError) {
+      dispatch(resetResponseMsg());
+    }
+  };
+}, [tId, dispatch, replyMsg, replyTicketError]);
+
     
   return (
     <Container>

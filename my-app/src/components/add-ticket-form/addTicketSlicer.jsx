@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     isLoading:false,
     error:'',
-    successMsg:''
+    successMsg:'',
     
 }
 const newTicketSlice = createSlice({
@@ -21,7 +21,11 @@ const newTicketSlice = createSlice({
             state.isLoading=true
             state.error=payload
         },
+        restSuccessMsg : (state)=>{
+            state.isLoading=true
+            state.successMsg="";
+        },
     }
 });
-export const {openNewTicketPending,openNewTicketSuccess,openNewTicketFail}=newTicketSlice.actions
+export const {openNewTicketPending,openNewTicketSuccess,openNewTicketFail,restSuccessMsg}=newTicketSlice.actions
 export default newTicketSlice.reducer

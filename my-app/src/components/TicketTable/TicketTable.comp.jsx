@@ -8,7 +8,7 @@ export const TicketTable = () => {
   if (isLoading) return <h3>loading ... </h3>;
   if (error) return <h3>{error}</h3>;
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover >
       <thead>
         <tr>
           <th>#</th>

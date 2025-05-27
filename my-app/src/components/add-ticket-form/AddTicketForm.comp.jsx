@@ -4,6 +4,7 @@ import { shortText } from '../../utils/validation';
 import { useDispatch ,useSelector } from 'react-redux';
 import './addTicketForm.style.css';
 import { openNewTicket } from './addTicketAction';
+import { restSuccessMsg} from './addTicketSlicer';
 
 const initialFrmDt = {
   subject: "",
@@ -26,6 +27,13 @@ export const AddTicketForm = () => {
 
   const [frmData, setFrmData] = useState(initialFrmDt);
   const [frmDataError, setFrmDataError] = useState(initialFrmError);
+
+useEffect(() => {
+  return () => {
+    successMsg && dispatch(restSuccessMsg());
+  };
+}, [dispatch,frmData, frmDataError]);
+
 
   const handleOnChange = e => {
     const { name, value } = e.target;

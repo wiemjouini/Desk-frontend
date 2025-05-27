@@ -18,7 +18,9 @@ export const Entry = () => {
   
   }
   return (
-    <div className='entry-page bg-info'>
+     <div className="login-page">
+      <div className="overlay"></div>
+    {/*<div className='entry-page bg-info'>*/}
       <Container className='box-form'> 
       {frmload === 'login'&& (<LoginForm
         FormSwitcher={FormSwitcher}

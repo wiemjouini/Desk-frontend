@@ -11,12 +11,14 @@ import { AddTicket } from './page/new-ticket/AddTicket.page';
 import { TicketLists } from './page/ticket-listing/TicketLists.page';
 import { Ticket } from './page/ticket/ticket.page';
 import { PrivateRoute } from './components/private-route/privateRouter.comp';
+import { Registration } from './page/registration/registration.page';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Entry />} />
+        <Route path="/" element={<Entry/>} />
+        <Route path="/registration" element={<Registration />} />
         <Route
           path="/dashboard"
           element={
@@ -25,6 +27,8 @@ function App() {
             </PrivateRoute>
           }
         />
+     
+
         <Route
           path="/add-ticket"
           element={

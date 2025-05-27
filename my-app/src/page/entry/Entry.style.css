@@ -1,25 +1,66 @@
 
-.entry-page {
+/*.entry-page {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .entry-page .container {
-    width: auto;               /* Let the container width adjust based on content */
-    max-width: 600px;          /* Optional: limit maximum width */
-    padding: 30px;             /* Optional: space inside the container */
-    display: flex;             /* Flexbox layout inside the container */
-    flex-direction: column;    /* Ensure elements inside the container are stacked vertically */
+    width: auto;               
+    max-width: 600px;         
+    padding: 30px;             
+    display: flex;             
+    flex-direction: column;    
     align-items: center;  
-    background-color: white;    /* Optional: center content horizontally inside the container */
+    background-color: white;    
     
   }
   .box-form{
     box-shadow: 0px 0px 15px -3px;
 
-  }
+  }*/
 
+
+
+
+  
+.login-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../../assets/img/sotetel-logo.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.box-form {
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.box-form {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
 
   
  
